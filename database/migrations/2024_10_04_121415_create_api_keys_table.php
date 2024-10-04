@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stations', function (Blueprint $table) {
+        Schema::create('api_keys', function (Blueprint $table) {
             $table->id();
-            $table->string('latitude');
-            $table->string('longtitude');
-            $table->string('Station_Name');
-            $table->string('Slug');
+            $table->foreignId('Station_id')
+                ->constrained('stations')
+                ->cascadeOnDelete();
+            $table->string('API_Name');
+            $table->string('API_Key');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stations');
+        Schema::dropIfExists('api_keys');
     }
 };

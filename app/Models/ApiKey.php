@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class station extends Model
+class ApiKey extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'Station_Name',
-        'latitude',
-        'longtitude',
-        'Slug',
+        'API_Name',
+        'API_Key',
+        'Station_id',
+        'type'
     ];
 
-    public function ApiKey(){
-        return $this->hasMany(ApiKey::class);
+    public function station(){
+        return $this->belongsTo(station::class);
     }
 }
