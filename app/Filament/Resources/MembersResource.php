@@ -25,6 +25,7 @@ class MembersResource extends Resource
             ->schema([
                 Forms\Components\Select::make('team_id')
                     ->relationship('Teams', 'Team_Name')
+                    ->relationship('teams', 'Team_Name')
                     ->searchable()
                     ->preload()
                     ->required()

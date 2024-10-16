@@ -1,11 +1,19 @@
 <?php
 
+
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\TeamController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', [HomepageController::class, 'homepage'])->name('home');
+
 
 Route::get('/Teams', [TeamController::class,'index'])->name('Teams');
 

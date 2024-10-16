@@ -18,6 +18,10 @@ class Members extends Model
         'Image'
     ];
     public function Teams(){
+      
         return $this->belongsTo(Teams::class);
+
+        return $this->belongsTo(Teams::class, 'team_id');
+
     }
 }
