@@ -4,9 +4,21 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
+    colors:{
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#ffffff',
+      AlgoBlue: {
+        100: '#2596BE',
+        
+      }
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'), 
+  ],
 }
