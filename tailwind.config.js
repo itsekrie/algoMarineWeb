@@ -1,18 +1,16 @@
-import preset from './vendor/filament/support/tailwind.config.preset'
 /** @type {import('tailwindcss').Config} */
 export default {
-  presets: [preset],
   
   content: [
-    './app/Filament/**/*.php',
+    
     './resources/views/**/*.blade.php',
     './vendor/filament/**/*.blade.php',
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
-    "./node_modules/flowbite/**/*.js",
+    "./index.html",
+    "./src/**/*.{html,js}",
     "./node_modules/tw-elements/js/**/*.js"
-
   ],
   theme: {
     extend: {
@@ -36,6 +34,7 @@ export default {
         'cmd' : '345.6px',
         'clg':'432px',
         'cxl':'576px',
+        '8.5/12':'70%',
         '10.5/12':'86%',
         'c2xl':'936px'
       },
@@ -43,20 +42,42 @@ export default {
         'sans-pro3': ['"Source Sans 3"', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
+        'oswald': ['Oswald', 'sans-serif'],
       },
       fontSize: {
-        '4.5xl': ['2.625rem', { lineHeight: '1.75' }], // 42px dengan line-height 46px
+        '4.5xl': ['2.625rem', { lineHeight: '1.75' }],
+        '5.5xl': ['3.375rem', { lineHeight: '1.20' }],
+        '7.5xl' : ['5.25rem', { lineHeight: '1.0' }],
+        '9.5xl' : ['8.5rem', { lineHeight: '1.0' }],
       },
       aspectRatio:{
         '3/4' : '3/4',
         '4/6' : '4/6'
       },
-
+      colors:{
+        'main-bg' : '#2596be',
+        'main-bg-2' : '#1a6d8a',
+        '2nd-bg' : '#00111A',
+      },
+      opacity:{
+        '39' : '.39',
+      },
+      fontWeight:{
+        'semisemibold':'645',
+      },
+      keyframes:{
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
+      animation:{
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
     },
   },
   plugins: [
-      require('flowbite/plugin'),
-      require("tw-elements/plugin.cjs"),
-      
+    require("tw-elements/plugin.cjs")  
   ],
+  darkMode: "class",
 }
