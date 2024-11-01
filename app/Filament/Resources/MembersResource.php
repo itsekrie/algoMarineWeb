@@ -34,7 +34,9 @@ class MembersResource extends Resource
                     ->required()
                     ->minLength(14)
                     ->maxLength(14)
-                    ->numeric()
+                    ->integer()
+                    ->extraAttributes(['class' => 'no-arrows'])
+                    ->unique()
                     ->label("NIM"),
                 Forms\Components\TextInput::make('Nama')
                     ->required()

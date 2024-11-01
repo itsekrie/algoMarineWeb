@@ -28,7 +28,7 @@
 </section>
 
 
-<section class="h-full my-36 mx-12 sm:mx-24 md:mx-36 lg:mx-64 xl:mx-80 xl:px-32">
+<section class="h-full my-36 mx-12 sm:mx-24 md:mx-36 lg:mx-64 xl:mx-80 xl:px-32 delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
     <div class="flex justify-center font-montserrat">
         <div class="flex flex-col items-center">
             <h1 class="text-4xl font-oswald underline text-main-bg">
@@ -50,7 +50,7 @@
     </div>
 </section>
 
-<section class="h-full">
+<section class="h-full delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
     <div class="flex h-full mx-auto px-4 max-w-xs sm:px-16 sm:max-w-lg md:px-32 md:max-w-2xl lg:px-0 lg:max-w-full lg:mx-60 xl:mx-80 my-52 font-montserrat items-center justify-center">
         <div class="lg:flex lg:flex-row items-center justify-center gap-x-8 hidden lg:visible">
             <div class="flex-col w-full space-y-3">
@@ -103,7 +103,7 @@
     </div>
 </section>
 
-<section class="h-screen" style="background-image: url('{{ asset('image/background-2.svg') }}'); background-size: cover; background-position: center;">
+<section class="h-screen delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400" style="background-image: url('{{ asset('image/background-2.svg') }}'); background-size: cover; background-position: center;">
     <div class="flex h-full font-oswald text-white px-20 sm:px-10 md:px-20 lg:px-40 xl:px-80 py-44">
         <div class="flex flex-col items-center justify-center space-y-16 w-full">
             <div class="text-center">
@@ -167,7 +167,7 @@
     </div>
 </section>
 
-<section class="h-full sm:h-screen">
+<section class="h-full sm:h-screen delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
     <div class="px-8 sm:px-9 md:px-16 lg:px-32 xl:px-64 py-24 h-full">
         <div class="flex flex-col h-full space-y-4">
             <h1 class="font-oswald text-6xl text-main-bg">
@@ -203,6 +203,7 @@
     </div>
 </section>
 
+<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 @endsection
     
 
