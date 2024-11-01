@@ -7,7 +7,7 @@
   <!-- Logo container -->
   <div class="flex-none px-3">
     <a href="{{route('home')}}">
-      <img src="{{asset("./images/logoAlgoMarineWhite.png")}}" alt="Logo" class="h-10 w-auto">
+      <img src="{{asset("./images/logoAlgoMarineWhite.png")}}" alt="Logo" class="h-full w-full">
     </a>
   </div>
   
@@ -23,17 +23,12 @@
       <ul class="list-style-none flex flex-col ps-0 lg:flex-row lg:ml-auto text-right">
         <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2">
           <a class="text-black dark:text-white lg:px-2" href="#" aria-current="page">
-            1
+            Profile
           </a>
         </li>
         <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0">
-          <a class="p-0 text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2" href="#">
-            2
-          </a>
-        </li>
-        <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0">
-          <a class="p-0 text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2" href="#">
-            3
+          <a class="" href="Teams">
+            Our Team
           </a>
         </li>
       
