@@ -1,9 +1,12 @@
 import './bootstrap';
 
 // Inisialisasi Tw-Element
-import {
-    Carousel,
-    initTWE,
-  } from "tw-elements";
+
   
-  initTWE({ Carousel });
+
+ 
+import 'flowbite';
+
+import {Input, initTWE} from "tw-elements";
+initTWE({Input,Carousel, Collapse}, {reinit:true});
+

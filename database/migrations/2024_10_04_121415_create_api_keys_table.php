@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('api_keys', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('Station_id')
+                ->constrained('stations')
+                ->cascadeOnDelete();
+            $table->string('API_Name');
+            $table->string('API_Key');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('api_keys');
     }
 };

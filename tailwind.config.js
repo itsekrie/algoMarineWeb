@@ -58,6 +58,12 @@ export default {
         'main-bg' : '#2596be',
         'main-bg-2' : '#1a6d8a',
         '2nd-bg' : '#00111A',
+        transparent: 'transparent',
+        current: 'currentColor',
+        white: '#ffffff',
+        AlgoBlue: {
+        100: '#2596BE',
+        
       },
       opacity:{
         '39' : '.39',
@@ -74,10 +80,14 @@ export default {
       animation:{
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
+
     },
+    extend: {},
   },
   plugins: [
-    require("tw-elements/plugin.cjs")  
+
+    require('flowbite/plugin'),
+    require("tw-elements/plugin.cjs") 
   ],
-  darkMode: "class",
+  darkMode: "class"
 }
