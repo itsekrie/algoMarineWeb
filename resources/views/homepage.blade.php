@@ -1,3 +1,8 @@
+
+<div>
+    <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
+</div>
+
 @extends('layouts.app')
 
 @section('title')
@@ -9,3 +14,4 @@ Homepage
         cis cis cis
     </div>
 @endsection
+

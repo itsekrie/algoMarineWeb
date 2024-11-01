@@ -4,6 +4,13 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+
     "./node_modules/flowbite/**/*.js",
     "./src/**/*.{html,js}",
     "./node_modules/tw-elements/js/**/*.js"
