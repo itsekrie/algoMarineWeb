@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
 
     function Homepage(){
-        return view('Homepage');
+        $title = 'Homepage';
+        return view('Homepage',compact('title'));
     }
 
     function Profile(){
