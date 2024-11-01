@@ -89,5 +89,6 @@ export default {
     require('flowbite/plugin'),
     require("tw-elements/plugin.cjs") 
   ],
-  darkMode: "class"
+  darkMode: "class"}
+
 }
