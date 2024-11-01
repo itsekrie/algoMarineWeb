@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  
+  safelist: [
+    '!duration-[0ms]',
+    '!delay-[0ms]',
+    'html.js :where([class*="taos:"]:not(.taos-init))'
+  ],
   content: [
-    
     './resources/views/**/*.blade.php',
     './vendor/filament/**/*.blade.php',
     "./resources/**/*.blade.php",
@@ -43,6 +46,7 @@ export default {
         'inter': ['Inter', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
         'oswald': ['Oswald', 'sans-serif'],
+        'open-sans': ["Open Sans", "sans-serif"]
       },
       fontSize: {
         '4.5xl': ['2.625rem', { lineHeight: '1.75' }],
@@ -80,6 +84,11 @@ export default {
       animation:{
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
+      safelist: [
+    '!duration-[0ms]',
+    '!delay-[0ms]',
+    'html.js :where([class*="taos:"]:not(.taos-init))'
+  ]
 
     },
     extend: {},
@@ -87,7 +96,8 @@ export default {
   plugins: [
 
     require('flowbite/plugin'),
-    require("tw-elements/plugin.cjs") 
+    require("tw-elements/plugin.cjs"),
+    require('taos/plugin')
   ],
   darkMode: "class"}
 

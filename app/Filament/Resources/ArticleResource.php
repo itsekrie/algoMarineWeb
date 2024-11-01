@@ -2,12 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TeamsResource\Pages;
-use App\Filament\Resources\TeamsResource\RelationManagers;
-use App\Models\Teams;
+use App\Filament\Resources\ArticleResource\Pages;
+use App\Filament\Resources\ArticleResource\RelationManagers;
+use App\Models\Article;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -16,9 +14,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Str;
 
-class TeamsResource extends Resource
+class ArticleResource extends Resource
 {
-    protected static ?string $model = Teams::class;
+    protected static ?string $model = Article::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -26,40 +24,40 @@ class TeamsResource extends Resource
     {
         return $form
             ->schema([
-                
-
-                Forms\Components\TextInput::make('Team_Name')
+                Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur:true)
                     ->afterStateUpdated(function ($set, $state){
-                        $set('Slug', Str::Slug($state));
+                        $set('slug', Str::slug($state));
                     }),
-                Forms\Components\TextInput::make('Slug')
-                    ->required()
-                    ->maxLength(255),
-
-                FileUpload::make('Team_Logo')
+                Forms\Components\FileUpload::make('cover')
                     ->required()
                     ->image()
-                    ->avatar()
-                    ->imageResizeTargetHeight('512')
-                    ->imageResizeTargetWidth('512')
-                    ->directory('uploads/teams/'),
-                    
-                TextInput::make('Team_Desc')
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('16:9')
+                    ->imageResizeTargetWidth('1920')
+                    ->imageResizeTargetHeight('1080')
+                    ->directory('uploads/article'),
+                Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(255),
-            ]);
+                    Forms\Components\DatePicker::make('publish_date')
+                    ->required(),
+                Forms\Components\RichEditor::make('content')
+                    ->required(),
+                ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('Team_Name')
+                Tables\Columns\TextColumn::make('cover')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('Slug')
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('content')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -74,7 +72,6 @@ class TeamsResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -94,10 +91,9 @@ class TeamsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTeams::route('/'),
-            'create' => Pages\CreateTeams::route('/create'),
-            'view' => Pages\ViewTeams::route('/{record}'),
-            'edit' => Pages\EditTeams::route('/{record}/edit'),
+            'index' => Pages\ListArticles::route('/'),
+            'create' => Pages\CreateArticle::route('/create'),
+            'edit' => Pages\EditArticle::route('/{record}/edit'),
         ];
     }
 }

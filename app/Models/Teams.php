@@ -12,6 +12,8 @@ class Teams extends Model
     protected $fillable = [
         'Team_Name',
         'Slug',
+        'Team_Desc',
+        'Team_Logo',
     ];
     public function Members(){
         return $this->hasMany(Members::class);
