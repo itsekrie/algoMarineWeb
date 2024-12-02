@@ -26,6 +26,9 @@ class AchievementController extends Controller
             abort(404, 'File not found');
         }
 
+
+
+        
         // Kembalikan response file
         return response()->file($filePath);
     }

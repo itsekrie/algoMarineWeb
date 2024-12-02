@@ -10,3 +10,4 @@ class CreateAchievements extends CreateRecord
 {
     protected static string $resource = AchievementsResource::class;
 }
+

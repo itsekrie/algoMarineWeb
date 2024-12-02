@@ -17,3 +17,4 @@ class EditAchievements extends EditRecord
         ];
     }
 }
+

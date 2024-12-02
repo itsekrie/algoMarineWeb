@@ -17,3 +17,4 @@ class ListAchievements extends ListRecords
         ];
     }
 }
+

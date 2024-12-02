@@ -15,4 +15,6 @@ class Achievements extends Model
         'published_at',
     ];
 
+
+    
 }
