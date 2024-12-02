@@ -106,4 +106,4 @@ class MembersResource extends Resource
             'edit' => Pages\EditMembers::route('/{record}/edit'),
         ];
     }
-}
+}  
